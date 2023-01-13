@@ -13,9 +13,7 @@ refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
   e.preventDefault();
-  formDisable();
-  
-
+  disableForm();   
   const fDelay = Number(refs.fDelay.value);
   const step = Number(refs.step.value);
   const amount = Number(refs.amount.value);
@@ -23,7 +21,7 @@ function onFormSubmit(e) {
   const totalTime = fDelay + step * amount;
   
   setTimeout(() => {
-    formEnable()
+    enableForm()
   },totalTime)
 
   for (let i = 1; i <= amount; i += 1){
@@ -55,7 +53,7 @@ function onError({ position, delay }) {
   
 };
 
-function formDisable() {
+function disableForm() {
   refs.form.disabled = true;
   refs.fDelay.disabled = true;
   refs.step.disabled = true;
@@ -63,7 +61,7 @@ function formDisable() {
   refs.button.disabled = true;
 }
 
-function formEnable() {
+function enableForm() {
   refs.form.disabled = false;
   refs.fDelay.disabled = false;
   refs.step.disabled = false;
