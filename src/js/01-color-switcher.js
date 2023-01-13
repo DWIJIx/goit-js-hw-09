@@ -8,7 +8,7 @@ refs.stopBtn.addEventListener('click', onStopBtnClick)
 
 refs.stopBtn.disabled = true;
 
-let intervalId = null;
+let timerId = null;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
